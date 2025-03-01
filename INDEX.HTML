@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry, My Love</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #ff758c, #ff7eb3, #ff4b6b);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            color: white;
+            position: relative;
+        }
+        
+        .message {
+            font-size: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 600px;
+        }
+        
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+        
+        .heart {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 80%, 15% 100%, 0% 35%);
+            opacity: 0.7;
+            animation: floating 5s infinite linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sorry-text">I'm So Sorry, Nishuu... ❤️🥹</div>
+    <div class="message">
+        <p>Maine kabhi bhi tumhe hurt karne ka socha bhi nahi tha… I know maine kal bohot rude behave kiya, and I really regret every single word…❤️</p>
+        <p>Tumhari smile mere liye sabse important hai, and it really breaks my heart jab tum mujhse is tarah behave krte:) ho…</p>
+        <p>You've always been so patient, understanding, and caring...mai ye sab kabhi for granted nahi lena chahti…</p>
+        <p>I promise, I'll control my temper, and be more understanding…</p>
+        <p>Bas ek chance aur de do… Main kabhi tumhe aise hurt nahi karungi… I swear, I’ll change💖</p>
+    </div>
+    <div class="sorry-text">I'm So Sorry, Cutuu❤️</div>
+    <button class="button" onclick="alert('I hope you forgive me and smile for me 😢❤️')">Click if you forgive me</button>
+    <!-- Floating Hearts -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+
+</html>
